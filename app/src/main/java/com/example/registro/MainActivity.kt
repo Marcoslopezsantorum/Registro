@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.i("Correcto", "Usuario creado correctamente") // Crea usuario y actualiza la informacion
+                    Toast.makeText(baseContext, "Usuario Creado.",
+                        Toast.LENGTH_SHORT).show()
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
